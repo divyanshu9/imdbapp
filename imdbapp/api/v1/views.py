@@ -23,7 +23,6 @@ class MovieListLookupAPIView(generics.ListAPIView):
         If no title is provided, returns all movies.
         """
         title = self.kwargs.get('title', None)  # Get 'title' from URL, if exists
-        print('title is ', title)
         if title:
             # If a title is provided, filter movies by the title
             queryset = Movie.objects.filter(title__icontains=title)  # Case-insensitive search by title
