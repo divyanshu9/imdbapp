@@ -30,18 +30,7 @@ To begin, create a Python virtual environment. Follow these steps:
       pip install -r requirements.txt
       ```
 
-### Step 2: Scraping Data
-
-1. **Run the Scraping Script**:
-    - The `script.py` file contains the logic to scrape IMDb data and save it to your Django database.
-    - Run the script using the following command:
-      ```bash
-      python script.py
-      ```
-
-   The script will automatically fetch movie data from IMDb and store it in your Django model. Ensure you have already set up the database for the Django project before running the script.
-
-### Step 3: Running the Django Development Server
+### Step 2: Running the Django Development Server
 
 To run the API server locally:
 
@@ -58,6 +47,19 @@ To run the API server locally:
       ```
 
    Your API should now be accessible at `http://127.0.0.1:8000/`.
+
+### Step 3: Scraping Data
+
+1. **Run the Scraping Script**:
+    - The `script.py` file contains the logic to scrape IMDb data and save it to your Django database.
+    - Run the script using the following command:
+      ```bash
+      python script.py
+      ```
+
+   The script will automatically fetch movie data from IMDb and store it in your Django model. Ensure you have already set up the database for the Django project before running the script.
+
+
 
 ---
 
