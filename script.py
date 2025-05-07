@@ -44,7 +44,7 @@ after_key = "eyJlc1Rva2VuIjpbIjE1NiIsIjE1NiIsInR0MDExODI3NiJdLCJmaWx0ZXIiOiJ7XCJ
 
 while (1):
     movies_to_save = []
-    url = 'https://caching.graphql.imdb.com/?operationName=AdvancedTitleSearch&variables={{"after":"{0}","first":1000,"genreConstraint":{{"allGenreIds":["Action"],"excludeGenreIds":[]}},"locale":"en-US","sortBy":"POPULARITY","sortOrder":"ASC"}}&extensions={{"persistedQuery":{{"sha256Hash":"6842af47c3f1c43431ae23d394f3aa05ab840146b146a2666d4aa0dc346dc482","version":1}}}}'.format(after_key)
+    url = 'https://caching.graphql.imdb.com/?operationName=AdvancedTitleSearch&variables={{"after":"{0}","first":1000,"genreConstraint":{{"allGenreIds":["Action"],"excludeGenreIds":[]}},"locale":"en-US","sortBy":"POPULARITY","sortOrder":"ASC"}}&extensions={{"persistedQuery":{{"sha256Hash":"be358d7b41add9fd174461f4c8c673dfee5e2a88744e2d5dc037362a96e2b4e4","version":1}}}}'.format(after_key)
 
     response = requests.get(url, headers=headers, cookies=cookies, verify=False)
     if response.status_code == 200:
@@ -54,6 +54,7 @@ while (1):
         print(dir(buffer))
         data = buffer.readlines()[0].decode('utf-8')
         data = json.loads(data)
+        print('data is :',data)
         print('got edges', len(data['data']['advancedTitleSearch']['edges']))
         for edge in data['data']['advancedTitleSearch']['edges']:
             node = edge['node']['title']
